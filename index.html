@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabs</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js" charset="utf-8"></script>
+    <script src="tab.js" charset="utf-8"></script>
+    <style>
+        body {
+            font-family: Helvetica, Arial;
+        }
+        #tab-container {
+            width: 500px;
+            margin: 50px auto;
+            border: 1px solid #777;
+        }
+
+        #tab-header {
+            width: 100%;
+            display: flex;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+
+        #tab-content-area {
+            padding: 10px;
+            position: relative;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-family: Futura, sans-serif;
+            border-bottom: 1px solid #aaa;
+            background-color: #ccc;
+            padding: 5px 0;
+        }
+
+        .tab:hover {
+            opacity: 0.8;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            color: #878;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab-container">
+        <div id="tab-header">
+            <div id="tab-1" class="tab">Tab 1</div>
+            <div id="tab-2" class="tab">Tab 2</div>
+            <div id="tab-3" class="tab">Tab 3</div>
+        </div>
+        <div id="tab-content-area">
+            <div class="tab-content active">Tab Content 1</div>
+            <div class="tab-content">Tab Content 2</div>
+            <div class="tab-content">Tab Content 3</div>
+        </div>
+    </div>
+
+    <script>
+    // Example usage
+    $(document).ready(function ($) {
+        // default usage
+        $('#tab-container').tabgroup();
+
+        // classname override for tab
+        //$('#tab-container').tabgroup({tabClass:'.tab1'});
+    });
+    </script>
+</body>
+</html>
